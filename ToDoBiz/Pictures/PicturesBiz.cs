@@ -64,11 +64,6 @@ public class PicturesBiz
 
     }
 
-    public byte[] GetPicture(string path)
-    {
-        return File.ReadAllBytes(path);
-    }
-
     public List<PicturesModel> GetPictures(string keyword)
     {
         var data = mockData.Pictures;

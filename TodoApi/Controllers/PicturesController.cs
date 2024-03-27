@@ -37,12 +37,4 @@ public class PicturesController : ControllerBase
         var data = picturesBiz.AddPictures(body);
         return Created(string.Empty, new APIResult<Hashtable>(data));
     }
-
-    [HttpGet("/api/picture")]
-    public ActionResult<APIResult<List<PicturesModel>>> GetPicture(string path)
-    {
-        var data = picturesBiz.GetPicture(path);
-        return File(data, Constants.ContentType.Png);
-    }
-
 }
