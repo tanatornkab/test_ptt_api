@@ -1,0 +1,22 @@
+// dotnet publish -c CloudProd -o ./bin/CloudProd
+// -c Release ระบุให้ build ในโหมด Release ซึ่งมักจะมีการ optimize และ minify ต่าง ๆ ที่ทำให้โปรแกรมทำงานได้รวดเร็วและมีขนาดเล็กกว่า.
+// -o ./bin/Production ระบุโฟลเดอร์ที่ต้องการเก็บ output ของการ build, ในที่นี้คือ ./bin/Production
+// ลบ Optimize > true ในไฟล์ project ด้วยสำหรับการ Debug
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "name": "Debug",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/TodoApi/bin/Debug/net8.0/TodoApi.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/TodoApi",
+      "env": { 
+        "ASPNETCORE_URLS": "http://localhost:5055"
+      }
+    } 
+  ]
+}
